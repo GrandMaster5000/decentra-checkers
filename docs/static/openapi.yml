@@ -29697,6 +29697,42 @@ paths:
                   additionalProperties: {}
       tags:
         - Query
+  /tolik22869/checkers/checkers/next_game:
+    get:
+      summary: Queries a NextGame by index.
+      operationId: Tolik22869CheckersCheckersNextGame
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            type: object
+            properties:
+              NextGame:
+                type: object
+                properties:
+                  idValue:
+                    type: string
+                    format: uint64
+        default:
+          description: An unexpected error response.
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+              message:
+                type: string
+              details:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    '@type':
+                      type: string
+                  additionalProperties: {}
+      tags:
+        - Query
   /tolik22869/checkers/checkers/params:
     get:
       summary: Parameters queries the parameters of the module.
@@ -50906,9 +50942,24 @@ definitions:
     title: >-
       SignatureCounts contains information about signature reporting for a
       number of blocks
+  tolik22869.checkers.checkers.NextGame:
+    type: object
+    properties:
+      idValue:
+        type: string
+        format: uint64
   tolik22869.checkers.checkers.Params:
     type: object
     description: Params defines the parameters for the module.
+  tolik22869.checkers.checkers.QueryGetNextGameResponse:
+    type: object
+    properties:
+      NextGame:
+        type: object
+        properties:
+          idValue:
+            type: string
+            format: uint64
   tolik22869.checkers.checkers.QueryParamsResponse:
     type: object
     properties:
