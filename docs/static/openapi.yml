@@ -51125,6 +51125,11 @@ definitions:
     title: >-
       SignatureCounts contains information about signature reporting for a
       number of blocks
+  tolik22869.checkers.checkers.MsgCreateGameResponse:
+    type: object
+    properties:
+      idValue:
+        type: string
   tolik22869.checkers.checkers.NextGame:
     type: object
     properties:
