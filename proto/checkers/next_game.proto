@@ -4,6 +4,7 @@ package tolik22869.checkers.checkers;
 option go_package = "github.com/tolik22869/checkers/x/checkers/types";
 
 message NextGame {
-  uint64 idValue = 1; 
+  string creator = 1;
+  uint64 idValue = 2; 
   
 }
