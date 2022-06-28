@@ -29715,6 +29715,10 @@ paths:
                   idValue:
                     type: string
                     format: uint64
+                  fifoHead:
+                    type: string
+                  fifoTail:
+                    type: string
         default:
           description: An unexpected error response.
           schema:
@@ -29801,6 +29805,10 @@ paths:
                     moveCount:
                       type: string
                       format: uint64
+                    beforeId:
+                      type: string
+                    afterId:
+                      type: string
               pagination:
                 type: object
                 properties:
@@ -29933,6 +29941,10 @@ paths:
                   moveCount:
                     type: string
                     format: uint64
+                  beforeId:
+                    type: string
+                  afterId:
+                    type: string
         default:
           description: An unexpected error response.
           schema:
@@ -51159,6 +51171,10 @@ definitions:
       idValue:
         type: string
         format: uint64
+      fifoHead:
+        type: string
+      fifoTail:
+        type: string
   tolik22869.checkers.checkers.Params:
     type: object
     description: Params defines the parameters for the module.
@@ -51185,6 +51201,10 @@ definitions:
             moveCount:
               type: string
               format: uint64
+            beforeId:
+              type: string
+            afterId:
+              type: string
       pagination:
         type: object
         properties:
@@ -51221,6 +51241,10 @@ definitions:
           idValue:
             type: string
             format: uint64
+          fifoHead:
+            type: string
+          fifoTail:
+            type: string
   tolik22869.checkers.checkers.QueryGetStoredGameResponse:
     type: object
     properties:
@@ -51242,6 +51266,10 @@ definitions:
           moveCount:
             type: string
             format: uint64
+          beforeId:
+            type: string
+          afterId:
+            type: string
   tolik22869.checkers.checkers.QueryParamsResponse:
     type: object
     properties:
@@ -51267,3 +51295,7 @@ definitions:
       moveCount:
         type: string
         format: uint64
+      beforeId:
+        type: string
+      afterId:
+        type: string
