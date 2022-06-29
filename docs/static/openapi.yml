@@ -29697,6 +29697,69 @@ paths:
                   additionalProperties: {}
       tags:
         - Query
+  '/tolik22869/checkers/checkers/can_play_move/{idValue}/{player}/{fromX}/{fromY}/{toX}/{toY}':
+    get:
+      summary: Queries a list of CanPlayMove items.
+      operationId: Tolik22869CheckersCheckersCanPlayMove
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            type: object
+            properties:
+              possible:
+                type: boolean
+              reason:
+                type: string
+        default:
+          description: An unexpected error response.
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+              message:
+                type: string
+              details:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    '@type':
+                      type: string
+                  additionalProperties: {}
+      parameters:
+        - name: idValue
+          in: path
+          required: true
+          type: string
+        - name: player
+          in: path
+          required: true
+          type: string
+        - name: fromX
+          in: path
+          required: true
+          type: string
+          format: uint64
+        - name: fromY
+          in: path
+          required: true
+          type: string
+          format: uint64
+        - name: toX
+          in: path
+          required: true
+          type: string
+          format: uint64
+        - name: toY
+          in: path
+          required: true
+          type: string
+          format: uint64
+      tags:
+        - Query
   /tolik22869/checkers/checkers/next_game:
     get:
       summary: Queries a NextGame by index.
@@ -51251,6 +51314,13 @@ definitions:
                    repeated Bar results = 1;
                    PageResponse page = 2;
            }
+  tolik22869.checkers.checkers.QueryCanPlayMoveResponse:
+    type: object
+    properties:
+      possible:
+        type: boolean
+      reason:
+        type: string
   tolik22869.checkers.checkers.QueryGetNextGameResponse:
     type: object
     properties:
