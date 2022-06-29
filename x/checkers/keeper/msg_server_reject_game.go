@@ -6,6 +6,7 @@ import (
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
+	rules "github.com/tolik22869/checkers/x/checkers/rules"
 	"github.com/tolik22869/checkers/x/checkers/types"
 )
 
@@ -15,6 +16,10 @@ func (k msgServer) RejectGame(goCtx context.Context, msg *types.MsgRejectGame) (
 	storedGame, found := k.Keeper.GetStoredGame(ctx, msg.IdValue)
 	if !found {
 		return nil, sdkerrors.Wrapf(types.ErrGameNotFound, "game not found %s", msg.IdValue)
+	}
+	// Is the game already won? Here, likely because it is forfeited.
+	if storedGame.Winner != rules.PieceStrings[rules.NO_PLAYER] {
+		return nil, types.ErrGameFinished
 	}
 
 	if strings.Compare(storedGame.Red, msg.Creator) == 0 {
