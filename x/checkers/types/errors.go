@@ -17,5 +17,6 @@ var (
 	ErrNotPlayerTurn      = sdkerrors.Register(ModuleName, 1106, "player tried to play out of turn: %s")
 	ErrWrongMove          = sdkerrors.Register(ModuleName, 1107, "wrong move")
 	ErrRedAlreadyPlayed   = sdkerrors.Register(ModuleName, 1108, "red player has already played")
-	ErrBlackAlreadyPlayed = sdkerrors.Register(ModuleName, 1108, "black player has already played")
+	ErrBlackAlreadyPlayed = sdkerrors.Register(ModuleName, 1109, "black player has already played")
+	ErrInvalidDeadline    = sdkerrors.Register(ModuleName, 1110, "deadline cannot be parsed: %s")
 )
