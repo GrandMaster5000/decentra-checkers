@@ -1,0 +1,11 @@
+syntax = "proto3";
+package tolik22869.checkers.checkers;
+
+import "checkers/winning_player.proto";
+
+option go_package = "github.com/tolik22869/checkers/x/checkers/types";
+
+message Leaderboard {
+  repeated WinningPlayer winners = 1; 
+  
+}

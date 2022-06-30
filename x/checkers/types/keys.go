@@ -74,3 +74,12 @@ const (
 	PlayMoveGas   = 10
 	RejectGameGas = 0
 )
+
+const (
+	LeaderboardKey = "Leaderboard-value-"
+)
+
+const (
+	LeaderboardWinnerLength = 100
+	DateAddedLayout         = DeadlineLayout
+)
